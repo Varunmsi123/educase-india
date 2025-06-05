@@ -28,7 +28,7 @@ export const Register = () => {
 
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
-      const res = await axios.post("http://localhost:5000/register", values);
+      const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/login`, values);
       alert(res.data.message);
       navigate("/login");
     } catch (err) {

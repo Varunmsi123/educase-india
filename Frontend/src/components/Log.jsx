@@ -20,7 +20,9 @@ export const Log = () => {
 
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
-      const res = await axios.post("http://localhost:5000/login", values, { withCredentials: true });
+      const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/login`, values, {
+        withCredentials: true,
+      });
       alert(res.data.message);
       navigate("/profile");
     } catch (err) {

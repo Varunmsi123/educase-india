@@ -7,7 +7,7 @@ export const Profile = () => {
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/profile", { withCredentials: true })
+    axios.get(`${import.meta.env.VITE_BACKEND_URL}/login`, { withCredentials: true })
       .then((res) => setUserData(res.data))
       .catch((err) => {
         console.error("Profile fetch error:", err);
